@@ -10,8 +10,8 @@ export const Container = styled.header`
   padding: 50px 80px;
   
   @media(max-width: 900px) {
-    justify-content: center;
-    padding: 35px 50px;
+    justify-content: flex-start;
+    padding: 35px 30px;
   }
 `;
 

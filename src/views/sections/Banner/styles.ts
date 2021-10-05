@@ -9,6 +9,8 @@ export const Container = styled.section`
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: right bottom;
+
+  overflow: hidden;
 `;
 
 export const Content = styled.div`
@@ -26,19 +28,28 @@ export const Greeting = styled.span`
   display: block;
   font-weight: bold;
   font-size: 2.5rem;
-
+  
   @media(max-width: 900px) {
     font-size: 1.8rem;
   }
-`;
+
+    @media(max-width: 400px) {
+      font-size: 1.6rem;
+    }
+  `;
 
 export const Title = styled.h1`
   color: ${({ theme }) => theme.magenta};
   display: inline-block;
   font-size: 2.5rem;
+  font-weight: bold;
 
   @media(max-width: 900px) {
     font-size: 1.8rem;
+  }
+
+  @media(max-width: 400px) {
+    font-size: 1.6rem;
   }
 `;
 
@@ -52,7 +63,7 @@ export const TextAboutVideos = styled.p`
   @media(max-width: 900px) {
     margin-top: 20px;
     font-size: 1.4rem;
-    width: 100%;
+    width: 90%;
   }
 `;
 

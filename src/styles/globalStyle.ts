@@ -26,8 +26,10 @@ export default createGlobalStyle`
   }
 
   @media(max-width: 450px) {
-    .ant-tooltip-placement-top {
-      display: none !important;
+    @media(max-height: 700px) {
+      .ant-tooltip {
+        display: none !important;
+      }
     }
   }
 

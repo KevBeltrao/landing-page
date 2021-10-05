@@ -19,6 +19,7 @@ export const Container = styled.button`
 
   display: grid;
   place-items: center;
+  overflow: hidden;
 
   &:before,
   &:after {
