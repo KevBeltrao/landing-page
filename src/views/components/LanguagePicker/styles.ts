@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: absolute;
-  right: 20px;
-  top: 10px;
+  right: 30px;
+  top: 5px;
 `;
 
 export const Button = styled.button`
-  background: transparent;
   border: none;
+  background: transparent;
+  padding: 10px;
   font-size: 1.2rem;
-  margin-left: 10px;
   color: ${({ theme, isActive }: {
       theme: { magenta: string, white: string },
       isActive: boolean,
