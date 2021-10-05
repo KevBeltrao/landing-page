@@ -1,0 +1,22 @@
+{
+  "banner": {
+    "title": {
+      "greet": "Hello, folks!",
+      "introduce": ["I am", "Kevin Beltrão"]
+    },
+    "youtube": ["I make videos to make technology more", "accessible"],
+    "contactBalloon": ["Feel like sharing thoughts?", "Talk to me here 👇"],
+    "form": {
+      "title": "Contact",
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Submit"
+    }
+  },
+  "emailFeedback": {
+    "success": "Your email was sent successfully!",
+    "fail": "Something went wrong! But here's my email: contato@kevbeltrao.com.br."
+  }
+}
