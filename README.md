@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+![KEVIN-Logo-Estudo-Final-2-1-removebg-preview](https://user-images.githubusercontent.com/43002117/136221485-98600c51-45a5-4dc1-8ef7-3d62bede0d73.png)
 
+Production link: [www.kevbeltrao.com.br](https://www.kevbeltrao.com.br/).\
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Technologies
+* React
+* Typescript
+* AntDesign
+* Styled Components
+* Yarn
+* Craco
 
-In the project directory, you can run:
+## Craco
 
-### `yarn start`
+As we're using AntDesign, we need to modify some vars to specify styles.\
+Because of that some changes were made to the start, test and build scripts\
+"start": "~~react-scripts~~ craco start",
+"build": "~~react-scripts~~ craco build",
+"test": "~~react-scripts~~ craco test",
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to run
+### Clone the project
+```sh
+git clone https://github.com/kbmelo/landing-page.git
+```
+```sh
+cd landing-page
+```
+### Install the dependencies
+```sh
+yarn
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Add the .env file with the following info:
+```env
+REACT_APP_USER_ID=xxxxxxxxx
+REACT_APP_SERVICE_ID=xxxxxxxxx
+REACT_APP_TEMPLATE_ID=xxxxxxxxx
+```
 
-### `yarn test`
+### Run the project
+```sh
+yarn start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Contribute
+### Branches
+Pull requests should be composed of type and branch name.\
+Branch name must be spaced by "-".\
+The types might be:
+- feature - For new features
+- fix - For adjustments (both bugfixes and hotfixes)
+- release - For release branches
 
-### `yarn build`
+Example: feature/navbar-mobile
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Commits
+Commits should be structured as <type>(<branch-name>): <commit description>\
+Example: feature(navbar-mobile): adding smooth scroll
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Pull requests
+Pull requests must have good descriptions.\
+The three main topics of the description are:
+- What I did
+- How I did
+- How to test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Of course it's not mandatory, sometimes it won't make sense to add some of these.\
+But add descriptive PRs with pictures and referencing code when needed.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment
+The master branch is synched with AWS Amplify.\
+Amplify builds the updates on merge and updates the production version.
