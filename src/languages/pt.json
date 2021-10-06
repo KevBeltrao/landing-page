@@ -16,7 +16,7 @@
     }
   },
   "emailFeedback": {
-    "success": "Eu email foi enviado!",
+    "success": "Seu email foi enviado!",
     "fail": "Algo deu errado :( Mas toma o meu email: contato@kevbeltrao.com.br."
   }
 }
