@@ -82,3 +82,7 @@ export const BalloonText = styled.p`
 export const BalloonSubText = styled.span`
   white-space: nowrap;
 `;
+
+export const Emoji = styled.img`
+  width: 20px;
+`;
