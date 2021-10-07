@@ -30,6 +30,17 @@
         }
       }
     },
+    "ignorePatterns": [
+      "*/.js",
+      "node_modules/*",
+      "build/*",
+      "dist/*",
+      "*.css",
+      "*.svg",
+      "*.json",
+      "*.ejs",
+      "*.js"
+    ],
     "rules": {
       "no-unused-vars": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
