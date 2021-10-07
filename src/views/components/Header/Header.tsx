@@ -3,6 +3,7 @@ import { FC } from 'react';
 import instagram from './assets/instagram.svg';
 import linkedin from './assets/linkedin.svg';
 import github from './assets/github.svg';
+import twitter from './assets/twitter.svg';
 
 import {
   Container,
@@ -27,6 +28,10 @@ const Banner: FC = () => (
 
       <SocialLink href="https://github.com/kbmelo/" target="_blank">
         <SocialIcon src={github} alt="github" />
+      </SocialLink>
+
+      <SocialLink href="https://twitter.com/kevbeltrao" target="_blank">
+        <SocialIcon src={twitter} alt="twitter" />
       </SocialLink>
     </SocialContainer>
   </Container>
