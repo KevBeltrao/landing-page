@@ -29,11 +29,11 @@ const ContactButton: FC<ContactButtonProps> = ({ dictionary, onClick, windowHeig
         title={(
           <BalloonText>
             <BalloonSubText>{dictionary.banner.contactBalloon[0]}</BalloonSubText>
-            {' '}
             <BalloonSubText>
               {dictionary.banner.contactBalloon[1]}
-              {' '}
               <Emoji
+                pointerDown={heightBreakpoint}
+                pointerRight={!heightBreakpoint}
                 alt="pointer emoji"
                 src={heightBreakpoint ? downPointerEmoji : rightPointerEmoji}
               />

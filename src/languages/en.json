@@ -5,7 +5,7 @@
       "introduce": ["I am", "Kevin Beltrão"]
     },
     "youtube": ["I make videos to make technology more", "accessible"],
-    "contactBalloon": ["Feel like sharing thoughts?", "Talk to me here 👇"],
+    "contactBalloon": ["Feel like sharing thoughts?", "Talk to me here"],
     "form": {
       "title": "Contact",
       "name": "Name",
