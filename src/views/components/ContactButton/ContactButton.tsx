@@ -7,7 +7,11 @@ import {
   Balloon,
   BalloonText,
   BalloonSubText,
+  Emoji,
 } from './styles';
+
+import downPointerEmoji from './assets/downPointerEmoji.png';
+import rightPointerEmoji from './assets/rightPointerEmoji.png';
 
 interface ContactButtonProps {
   dictionary: DictionaryType;
@@ -15,21 +19,32 @@ interface ContactButtonProps {
   windowHeight: number;
 }
 
-const ContactButton: FC<ContactButtonProps> = ({ dictionary, onClick, windowHeight }) => (
-  <Container onClick={onClick}>
-    <Balloon
-      placement={windowHeight > 700 ? 'top' : 'left'}
-      title={(
-        <BalloonText>
-          <BalloonSubText>{dictionary.banner.contactBalloon[0]}</BalloonSubText>
-          {' '}
-          <BalloonSubText>{dictionary.banner.contactBalloon[1]}</BalloonSubText>
-        </BalloonText>
-      )}
-    >
-      <Avatar />
-    </Balloon>
-  </Container>
-);
+const ContactButton: FC<ContactButtonProps> = ({ dictionary, onClick, windowHeight }) => {
+  const heightBreakpoint = windowHeight > 700;
+
+  return (
+    <Container onClick={onClick}>
+      <Balloon
+        placement={heightBreakpoint ? 'top' : 'left'}
+        title={(
+          <BalloonText>
+            <BalloonSubText>{dictionary.banner.contactBalloon[0]}</BalloonSubText>
+            <BalloonSubText>
+              {dictionary.banner.contactBalloon[1]}
+              <Emoji
+                pointerDown={heightBreakpoint}
+                pointerRight={!heightBreakpoint}
+                alt="pointer emoji"
+                src={heightBreakpoint ? downPointerEmoji : rightPointerEmoji}
+              />
+            </BalloonSubText>
+          </BalloonText>
+        )}
+      >
+        <Avatar />
+      </Balloon>
+    </Container>
+  );
+};
 
 export default ContactButton;

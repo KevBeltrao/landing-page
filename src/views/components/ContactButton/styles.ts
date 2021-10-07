@@ -9,6 +9,11 @@ const waves = keyframes`
   100% {transform:scale(1.1); opacity:0;}
 `;
 
+interface EmojiProps {
+  pointerDown?: boolean,
+  pointerRight?: boolean,
+}
+
 export const Container = styled.button`
   position: absolute;
   right: 100px;
@@ -81,4 +86,12 @@ export const BalloonText = styled.p`
 
 export const BalloonSubText = styled.span`
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+`;
+
+export const Emoji = styled.img<EmojiProps>`
+  height: ${(props) => props.pointerDown && '20px'};
+  width: ${(props) => props.pointerRight && '20px'};
+  margin-left: 5px;
 `;
