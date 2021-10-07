@@ -14,6 +14,8 @@ export default createGlobalStyle`
 
     background: #020154;
     color: #fefefe;
+
+    overflow: hidden;
   }
 
   body, input, button {

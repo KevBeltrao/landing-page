@@ -24,7 +24,7 @@ export const Container = styled.button`
 
   display: grid;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
 
   &:before,
   &:after {
@@ -60,13 +60,31 @@ export const Container = styled.button`
   }
 `;
 
-export const Avatar = styled.img.attrs({ src: avatar })`
-  width: 200px;
+export const AvatarBackground = styled.div`
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  
   position: relative;
   z-index: 1;
+  
+  background: ${({ theme }) => theme.blue};
+  
+  @media(max-width: 900px) {
+    height: 100px;
+    width: 100px;
+  }
+`;
+
+export const Avatar = styled.img.attrs({ src: avatar })`
+  width: 200px;
+  position: absolute;
+  top: -15px;
+  z-index: 2;
 
   @media(max-width: 900px) {
-    width: 150px;
+    width: 130px;
+    top: 0;
   }
 `;
 
@@ -74,8 +92,16 @@ export const Balloon = styled(Tooltip).attrs(({ theme }) => ({
   color: theme.white,
   visible: true,
 }))`
+  width: 200px;
+  height: 200px;
+
   display: grid;
   place-items: center;
+
+  @media(max-width: 900px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
 export const BalloonText = styled.p`

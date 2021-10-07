@@ -4,6 +4,7 @@ import { DictionaryType } from '../../../languages/index';
 import {
   Container,
   Avatar,
+  AvatarBackground,
   Balloon,
   BalloonText,
   BalloonSubText,
@@ -41,6 +42,7 @@ const ContactButton: FC<ContactButtonProps> = ({ dictionary, onClick, windowHeig
           </BalloonText>
         )}
       >
+        <AvatarBackground />
         <Avatar />
       </Balloon>
     </Container>
