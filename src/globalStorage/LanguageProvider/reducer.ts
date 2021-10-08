@@ -15,7 +15,6 @@ export default (
   const lowerCaseType = type.toLowerCase();
 
   if (availableOptions.includes(lowerCaseType)) {
-    // save current langauge on change
     localStorage.setItem(languageLocalStorageKey, lowerCaseType);
 
     return {
