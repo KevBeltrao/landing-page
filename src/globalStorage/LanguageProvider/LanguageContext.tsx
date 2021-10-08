@@ -3,6 +3,7 @@ import {
   createContext,
   useReducer,
   Dispatch,
+  useEffect,
 } from 'react';
 
 import {
@@ -13,8 +14,16 @@ import {
 } from '../../languages';
 import reducer from './reducer';
 
+export const languageLocalStorageKey = 'KevBeltrao.lang';
+
 const getCurrentLanguage = (): LanguageType => {
   const DEFAULT_LANGUAGE = 'en';
+
+  const savedLanguage = localStorage.getItem(languageLocalStorageKey);
+
+  if (savedLanguage && availableOptions.includes(savedLanguage)) {
+    return savedLanguage as LanguageType;
+  }
 
   const { language } = navigator;
 
@@ -44,12 +53,12 @@ export type ContextType = {
 export const LanguageContext = createContext({} as ContextType);
 
 const LanguageProvider: FC = ({ children }) => {
-  const initialLanguage = getCurrentLanguage();
-
   const [languageValue, languageDispatch] = useReducer(reducer, {
-    userLanguage: initialLanguage,
-    dictionary: dictionaryList[initialLanguage],
+    userLanguage: 'en',
+    dictionary: dictionaryList.en,
   });
+
+  useEffect(() => languageDispatch({ type: getCurrentLanguage() }), []);
 
   return (
     <LanguageContext.Provider value={{ languageValue, languageDispatch }}>
