@@ -38,6 +38,9 @@ export const SocialContainer = styled.div`
 
 export const SocialLink = styled.a`
   margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media(max-width: 900px) {
     margin: 20px 0;
