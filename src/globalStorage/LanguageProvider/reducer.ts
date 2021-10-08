@@ -4,7 +4,7 @@ import {
   availableOptions,
 } from '../../languages';
 
-import { ContextValueType } from './LanguageContext';
+import { ContextValueType, languageLocalStorageKey } from './LanguageContext';
 
 export default (
   state: ContextValueType,
@@ -15,6 +15,9 @@ export default (
   const lowerCaseType = type.toLowerCase();
 
   if (availableOptions.includes(lowerCaseType)) {
+    // save current langauge on change
+    localStorage.setItem(languageLocalStorageKey, lowerCaseType);
+
     return {
       userLanguage: lowerCaseType,
       dictionary: dictionaryList[lowerCaseType as LanguageType],

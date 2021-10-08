@@ -3,6 +3,7 @@ import {
   createContext,
   useReducer,
   Dispatch,
+  useEffect,
 } from 'react';
 
 import {
@@ -13,8 +14,18 @@ import {
 } from '../../languages';
 import reducer from './reducer';
 
+export const languageLocalStorageKey = 'KevBeltrao.lang';
+
 const getCurrentLanguage = (): LanguageType => {
   const DEFAULT_LANGUAGE = 'en';
+
+  // get last saved language from local storage
+  const savedLanguage = localStorage.getItem(languageLocalStorageKey);
+
+  // if there is a saved language and it is valid then return it
+  if (savedLanguage && availableOptions.includes(savedLanguage)) {
+    return savedLanguage as LanguageType;
+  }
 
   const { language } = navigator;
 
@@ -44,12 +55,14 @@ export type ContextType = {
 export const LanguageContext = createContext({} as ContextType);
 
 const LanguageProvider: FC = ({ children }) => {
-  const initialLanguage = getCurrentLanguage();
-
+  // initilize reducer with default 'en' language
   const [languageValue, languageDispatch] = useReducer(reducer, {
-    userLanguage: initialLanguage,
-    dictionary: dictionaryList[initialLanguage],
+    userLanguage: 'en',
+    dictionary: dictionaryList.en,
   });
+
+  // On first run only get current language
+  useEffect(() => languageDispatch({ type: getCurrentLanguage() }), []);
 
   return (
     <LanguageContext.Provider value={{ languageValue, languageDispatch }}>
