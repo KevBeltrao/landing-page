@@ -22,7 +22,7 @@ Because of that some changes were made to the start, test and build scripts\
 ## How to run
 ### Clone the project
 ```sh
-git clone https://github.com/kbmelo/landing-page.git
+git clone https://github.com/kevbeltrao/landing-page.git
 ```
 ```sh
 cd landing-page
