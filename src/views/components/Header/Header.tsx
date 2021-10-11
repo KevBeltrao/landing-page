@@ -22,11 +22,11 @@ const Banner: FC = () => (
         <SocialIcon src={instagram} alt="instagram" />
       </SocialLink>
 
-      <SocialLink href="https://www.linkedin.com/in/kbmelo/" target="_blank">
+      <SocialLink href="https://www.linkedin.com/in/kevbeltrao/" target="_blank">
         <SocialIcon src={linkedin} alt="linkedin" />
       </SocialLink>
 
-      <SocialLink href="https://github.com/kbmelo/" target="_blank">
+      <SocialLink href="https://github.com/kevbeltrao/" target="_blank">
         <SocialIcon src={github} alt="github" />
       </SocialLink>
 
