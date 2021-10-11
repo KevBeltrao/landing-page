@@ -50,7 +50,7 @@ const Banner: FC<BannerProps> = ({
           <Highlight>{bannerText.youtube[1]}</Highlight>
         </TextAboutVideos>
 
-        <YoutubeLink href="https://youtube.com/kevinbeltrao" target="_blank">
+        <YoutubeLink href="https://youtube.com/kevbeltrao" target="_blank">
           Youtube
         </YoutubeLink>
       </Content>
